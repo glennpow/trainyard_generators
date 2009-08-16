@@ -1,0 +1,3 @@
+<%- for attribute in attributes -%>
+<%%= render_field(t(:<%= attribute.name %>), h(@<%= singular_name %>.<%= attribute.name %>)) %>
+<%- end -%>

@@ -1,0 +1,7 @@
+<%% title t(:<%= singular_name %>) %>
+
+<%%= render_indexer(@indexer) %>
+
+<%% if is_editor_of?(@resource) %>
+  <%% page_action icon_link_to(:add_large, t(:add_object, :object => t(:<%= singular_name %>)), new_object_path) %>
+<%% end %>

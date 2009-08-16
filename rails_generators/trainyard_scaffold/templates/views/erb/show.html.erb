@@ -1,0 +1,8 @@
+<%% title t(:<%= singular_name %>) %>
+
+<%%= render :partial => 'show', :locals => { :<%= singular_name %> => @<%= singular_name %> } %>
+
+<%% if is_editor_of?(@<%= singular_name %>) %>
+  <%% page_action icon_link_to(:edit, t(:edit), edit_object_path) %>
+  <%% page_action icon_link_to(:delete, t(:delete), @<%= singular_name %>, :confirm => t(:are_you_sure), :method => :delete) %>
+<%% end %>

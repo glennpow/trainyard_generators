@@ -1,0 +1,10 @@
+<%%= render_row([
+  h(<%= singular_name %>.name),
+    <%- for attribute in attributes -%>
+    h(<%= singular_name %>.<%= attribute.name %>),
+    <%- end -%>
+  ],
+  :actions => is_editor_of?(<%= singular_name %>) ? [
+    icon_link_to(:edit, t(:edit), edit_media_path(<%= singular_name %>)),
+    icon_link_to(:delete, t(:delete), <%= singular_name %>, :confirm => t(:are_you_sure), :method => :delete)
+  ] : nil) %>
